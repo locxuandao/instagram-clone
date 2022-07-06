@@ -7,7 +7,7 @@ import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons';
 import { auth } from '../../firebase/config';
 import { FacebookAuthProvider } from "firebase/auth";
 
-import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -15,16 +15,11 @@ const cx = className.bind(styles)
 const fbProvider =  new FacebookAuthProvider()  
 
 function Login() {
-   let navagatie = useNavigate()
-
- const handleFabookLogin = () => {
-    auth.signInWithPopup(fbProvider);
- }
- auth.onAuthStateChanged((user) => {
-     if(user) { navagatie('/app')}
-       
-     
- })
+    
+    const handleFabookLogin = () => {
+        auth.signInWithPopup(fbProvider);
+    }
+    
     return (
         <div className={cx('wrapper')}>
             <div className={cx('content')}>
